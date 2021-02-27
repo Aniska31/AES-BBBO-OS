@@ -1,0 +1,11 @@
+D:\Documents\AES-BBBO\prak1\3\bin\Debug\netcoreapp3.1\3.exe
+D:\Documents\AES-BBBO\prak1\3\bin\Debug\netcoreapp3.1\3.deps.json
+D:\Documents\AES-BBBO\prak1\3\bin\Debug\netcoreapp3.1\3.runtimeconfig.json
+D:\Documents\AES-BBBO\prak1\3\bin\Debug\netcoreapp3.1\3.runtimeconfig.dev.json
+D:\Documents\AES-BBBO\prak1\3\bin\Debug\netcoreapp3.1\3.dll
+D:\Documents\AES-BBBO\prak1\3\bin\Debug\netcoreapp3.1\3.pdb
+D:\Documents\AES-BBBO\prak1\3\obj\Debug\netcoreapp3.1\3.csprojAssemblyReference.cache
+D:\Documents\AES-BBBO\prak1\3\obj\Debug\netcoreapp3.1\3.AssemblyInfoInputs.cache
+D:\Documents\AES-BBBO\prak1\3\obj\Debug\netcoreapp3.1\3.AssemblyInfo.cs
+D:\Documents\AES-BBBO\prak1\3\obj\Debug\netcoreapp3.1\3.dll
+D:\Documents\AES-BBBO\prak1\3\obj\Debug\netcoreapp3.1\3.pdb
