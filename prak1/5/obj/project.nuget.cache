@@ -1,8 +1,19 @@
 {
   "version": 2,
-  "dgSpecHash": "2xKPeuigr+5P9p1LAJEOhixFvJfrxzVQtV1N5acsU0ydr+FyC8bfE5BrikGuxDJVc4Ij9/7qddATkg/O0N9spg==",
+  "dgSpecHash": "99NeoKULjPBi3kq9+1VTTNSxMgYcLL5rbiQGtLPXlaSaKcUTTBSUftZQj1lCi66IvUrvsZP7eIOklS91nPd+/A==",
   "success": true,
   "projectFilePath": "C:\\Users\\Yaga\\Documents\\AES-BBBO-OS\\prak1\\5\\5.csproj",
-  "expectedPackageFiles": [],
+  "expectedPackageFiles": [
+    "C:\\Users\\Yaga\\.nuget\\packages\\dotnetzip\\1.15.0\\dotnetzip.1.15.0.nupkg.sha512",
+    "C:\\Users\\Yaga\\.nuget\\packages\\microsoft.netcore.platforms\\5.0.0\\microsoft.netcore.platforms.5.0.0.nupkg.sha512",
+    "C:\\Users\\Yaga\\.nuget\\packages\\microsoft.win32.systemevents\\5.0.0\\microsoft.win32.systemevents.5.0.0.nupkg.sha512",
+    "C:\\Users\\Yaga\\.nuget\\packages\\system.drawing.common\\5.0.0\\system.drawing.common.5.0.0.nupkg.sha512",
+    "C:\\Users\\Yaga\\.nuget\\packages\\system.runtime.compilerservices.unsafe\\5.0.0\\system.runtime.compilerservices.unsafe.5.0.0.nupkg.sha512",
+    "C:\\Users\\Yaga\\.nuget\\packages\\system.security.accesscontrol\\5.0.0\\system.security.accesscontrol.5.0.0.nupkg.sha512",
+    "C:\\Users\\Yaga\\.nuget\\packages\\system.security.permissions\\5.0.0\\system.security.permissions.5.0.0.nupkg.sha512",
+    "C:\\Users\\Yaga\\.nuget\\packages\\system.security.principal.windows\\5.0.0\\system.security.principal.windows.5.0.0.nupkg.sha512",
+    "C:\\Users\\Yaga\\.nuget\\packages\\system.text.encoding.codepages\\5.0.0\\system.text.encoding.codepages.5.0.0.nupkg.sha512",
+    "C:\\Users\\Yaga\\.nuget\\packages\\system.windows.extensions\\5.0.0\\system.windows.extensions.5.0.0.nupkg.sha512"
+  ],
   "logs": []
 }
