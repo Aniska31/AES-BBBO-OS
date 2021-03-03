@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Yaga\\Documents\\AES-BBBO-OS\\prak1\\4\\4\\4.csproj",
-      "projectName": "4",
-      "projectPath": "C:\\Users\\Yaga\\Documents\\AES-BBBO-OS\\prak1\\4\\4\\4.csproj",
+      "projectUniqueName": "C:\\Users\\Yaga\\Documents\\AES-BBBO-OS\\prak1\\5\\5.csproj",
+      "projectName": "5",
+      "projectPath": "C:\\Users\\Yaga\\Documents\\AES-BBBO-OS\\prak1\\5\\5.csproj",
       "packagesPath": "C:\\Users\\Yaga\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Yaga\\Documents\\AES-BBBO-OS\\prak1\\4\\4\\obj\\",
+      "outputPath": "C:\\Users\\Yaga\\Documents\\AES-BBBO-OS\\prak1\\5\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Yaga\\AppData\\Roaming\\NuGet\\NuGet.Config",
