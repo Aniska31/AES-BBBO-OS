@@ -37,6 +37,12 @@
       },
       "frameworks": {
         "netcoreapp3.1": {
+          "dependencies": {
+            "DotNetZip": {
+              "target": "Package",
+              "version": "[1.15.0, )"
+            }
+          },
           "imports": [
             "net461",
             "net462",

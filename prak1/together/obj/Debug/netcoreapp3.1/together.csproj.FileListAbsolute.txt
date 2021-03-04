@@ -1,0 +1,4 @@
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\together\bin\Debug\netcoreapp3.1\together.exe
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\together\obj\Debug\netcoreapp3.1\together.csprojAssemblyReference.cache
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\together\obj\Debug\netcoreapp3.1\together.AssemblyInfoInputs.cache
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\together\obj\Debug\netcoreapp3.1\together.AssemblyInfo.cs
