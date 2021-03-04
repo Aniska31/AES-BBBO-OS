@@ -9,3 +9,16 @@ D:\Documents\AES-BBBO\prak1\1\obj\Debug\netcoreapp3.1\1.AssemblyInfoInputs.cache
 D:\Documents\AES-BBBO\prak1\1\obj\Debug\netcoreapp3.1\1.AssemblyInfo.cs
 D:\Documents\AES-BBBO\prak1\1\obj\Debug\netcoreapp3.1\1.dll
 D:\Documents\AES-BBBO\prak1\1\obj\Debug\netcoreapp3.1\1.pdb
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\1\bin\Debug\netcoreapp3.1\1.exe
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\1\bin\Debug\netcoreapp3.1\1.deps.json
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\1\bin\Debug\netcoreapp3.1\1.runtimeconfig.json
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\1\bin\Debug\netcoreapp3.1\1.runtimeconfig.dev.json
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\1\bin\Debug\netcoreapp3.1\1.dll
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\1\bin\Debug\netcoreapp3.1\1.pdb
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\1\obj\Debug\netcoreapp3.1\1.csprojAssemblyReference.cache
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\1\obj\Debug\netcoreapp3.1\1.AssemblyInfoInputs.cache
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\1\obj\Debug\netcoreapp3.1\1.AssemblyInfo.cs
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\1\obj\Debug\netcoreapp3.1\1.csproj.CoreCompileInputs.cache
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\1\obj\Debug\netcoreapp3.1\1.dll
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\1\obj\Debug\netcoreapp3.1\1.pdb
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak1\1\obj\Debug\netcoreapp3.1\1.genruntimeconfig.cache

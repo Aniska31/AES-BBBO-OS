@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "D:\\Documents\\AES-BBBO\\prak1\\3\\3.csproj": {}
+    "C:\\Users\\Yaga\\Documents\\AES-BBBO-OS\\prak1\\3\\3.csproj": {}
   },
   "projects": {
-    "D:\\Documents\\AES-BBBO\\prak1\\3\\3.csproj": {
+    "C:\\Users\\Yaga\\Documents\\AES-BBBO-OS\\prak1\\3\\3.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "D:\\Documents\\AES-BBBO\\prak1\\3\\3.csproj",
+        "projectUniqueName": "C:\\Users\\Yaga\\Documents\\AES-BBBO-OS\\prak1\\3\\3.csproj",
         "projectName": "3",
-        "projectPath": "D:\\Documents\\AES-BBBO\\prak1\\3\\3.csproj",
-        "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-        "outputPath": "D:\\Documents\\AES-BBBO\\prak1\\3\\obj\\",
+        "projectPath": "C:\\Users\\Yaga\\Documents\\AES-BBBO-OS\\prak1\\3\\3.csproj",
+        "packagesPath": "C:\\Users\\Yaga\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Yaga\\Documents\\AES-BBBO-OS\\prak1\\3\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Yaga\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -52,7 +52,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
         }
       }
     }

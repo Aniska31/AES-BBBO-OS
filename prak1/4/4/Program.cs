@@ -14,15 +14,17 @@ namespace _4
   {
     static void Main(string[] args)
     {
+      //Создать файл формате XML  из редактора
       Console.WriteLine("Введите название файла:");
       string doc_name = Console.ReadLine();
       XDocument market  = new XDocument();
       XElement things = new XElement("things");
       XElement frut = new XElement("fruit");
       XElement veg = new XElement("veg");
+      Console.ReadKey();
 
-
-      Console.WriteLine("Введите название фрукта:");
+      //Записать в файл новые данные из консоли
+      Console.WriteLine("\nВведите название фрукта:");
       string f_name = Console.ReadLine();
       XAttribute frutNameAttr = new XAttribute("name", f_name);
       Console.WriteLine("Введите название страны-импортера:");
@@ -50,9 +52,11 @@ namespace _4
       things.Add(veg);
       market.Add(things);
       market.Save(doc_name);
+      Console.ReadKey();
 
+      //Прочитать файл в консоль
       XDocument xdoc = XDocument.Load(doc_name);
-      Console.WriteLine("Вывод фруктов:");
+      Console.WriteLine("\nВывод фруктов:");
       foreach (XElement thingElement in xdoc.Element("things").Elements("fruit"))
       {
         XAttribute nameAttribute = thingElement.Attribute("name");
@@ -65,7 +69,6 @@ namespace _4
           Console.WriteLine($"Страна-импортер: {companyElement.Value}");
           Console.WriteLine($"Цена: {priceElement.Value}");
         }
-        Console.WriteLine();
       }
       Console.WriteLine("Вывод овощей:");
       foreach (XElement thingElement in xdoc.Element("things").Elements("veg"))
@@ -80,11 +83,11 @@ namespace _4
           Console.WriteLine($"Страна-импортер: {companyElement.Value}");
           Console.WriteLine($"Цена: {priceElement.Value}");
         }
-        Console.WriteLine();
       }
+      Console.ReadKey();
 
-  
-      Console.WriteLine("Вы точно уверены, что хотите удалить? (1 - yes, 0 - no)");
+      //Удалить файл
+      Console.WriteLine("\nВы точно уверены, что хотите удалить? (1 - yes, 0 - no)");
       string answer = Console.ReadLine();
       if (answer != "0")
       {
@@ -93,6 +96,7 @@ namespace _4
       }
       else
         Console.WriteLine("Удаление отменено");
+      Console.ReadKey();
     }
   }
 }

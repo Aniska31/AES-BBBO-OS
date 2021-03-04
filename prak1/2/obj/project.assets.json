@@ -8,19 +8,19 @@
     ".NETCoreApp,Version=v3.1": []
   },
   "packageFolders": {
-    "C:\\Users\\student\\.nuget\\packages\\": {}
+    "C:\\Users\\Yaga\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "D:\\Documents\\AES-BBBO\\prak1\\2\\2.csproj",
+      "projectUniqueName": "C:\\Users\\Yaga\\Documents\\AES-BBBO-OS\\prak1\\2\\2.csproj",
       "projectName": "2",
-      "projectPath": "D:\\Documents\\AES-BBBO\\prak1\\2\\2.csproj",
-      "packagesPath": "C:\\Users\\student\\.nuget\\packages\\",
-      "outputPath": "D:\\Documents\\AES-BBBO\\prak1\\2\\obj\\",
+      "projectPath": "C:\\Users\\Yaga\\Documents\\AES-BBBO-OS\\prak1\\2\\2.csproj",
+      "packagesPath": "C:\\Users\\Yaga\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Yaga\\Documents\\AES-BBBO-OS\\prak1\\2\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\student\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Yaga\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -58,7 +58,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.101\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\3.1.402\\RuntimeIdentifierGraph.json"
       }
     }
   }

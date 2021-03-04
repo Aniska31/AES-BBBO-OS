@@ -14,16 +14,23 @@ namespace _2
   {
     static void Main(string[] args)
     {
+      //Создать файл
       Console.WriteLine("Введите название файла(вместе с расширением):");
       string name = Console.ReadLine();
       FileStream fs=File.Create(name);
+      Console.WriteLine("Файл был создан.\n");
+      Console.ReadKey();
 
+      //Записать в файл строку
       Console.WriteLine("Введите нужную информацию:");
       string text = Console.ReadLine();
       byte[] info = new UTF8Encoding(true).GetBytes(text);
       fs.Write(info, 0, info.Length);
       fs.Close();
+      Console.WriteLine("Строка была записана в файл.\n");
+      Console.ReadKey();
 
+      //Прочитать файл в консоль
       Console.WriteLine("Сейчас будет считка информации:");
       StreamReader sr = File.OpenText(name);
       string s = "";
@@ -31,8 +38,12 @@ namespace _2
       {
         Console.WriteLine(s);
       }
+      sr.Close();
+      Console.WriteLine("Файл прочитан.\n");
+      Console.ReadKey();
 
-      Console.WriteLine("Вы точно уверены, что хотите удалить? (1 - yes, 0 - no");
+      //Удалить файл
+      Console.WriteLine("Вы точно уверены, что хотите удалить? (1 - yes, 0 - no):");
       string answer = Console.ReadLine();
       if (answer != "0")
       {
@@ -41,6 +52,7 @@ namespace _2
       }
       else
         Console.WriteLine("Удаление отменено");
+      Console.ReadKey();
     }
   }
 }
