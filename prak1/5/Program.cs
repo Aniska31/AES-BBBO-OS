@@ -5,8 +5,8 @@
 Удалить файл и архив*/
 using System;
 using System.IO;
-//using System.IO.Compression;
-using  Ionic.Zip;
+using System.Collections;
+using Ionic.Zip;
 
 namespace _5
 {
@@ -34,11 +34,19 @@ namespace _5
        File.Open(@"test\"+subzip, FileMode.OpenOrCreate, FileAccess.ReadWrite, FileShare.ReadWrite);
        zip.AddFile(@"test\" + subzip,"");
        zip.Save();
-       Console.WriteLine("Файл был добавлен в архив.");
+       Console.WriteLine("Файл был добавлен в архив.\n");
 
       //Разархивировать файл и вывести данные о нем
       zip.ExtractAll(@"test\more test\");
-      Console.WriteLine("Разархивация прошла успешно:");
+      Console.WriteLine("Разархивация прошла успешно.");
+      DirectoryInfo di = new DirectoryInfo(@"test\more test\");
+      FileInfo[] fiArr = di.GetFiles();
+      foreach (FileInfo f in fiArr)
+        Console.WriteLine($"Разархивированный файл:\nИмя:{f.Name}\nРазмер:{f.Length}\nНахождение:{f.FullName}");
+
+
+      //Удалить файл и архив
+
     }
   }
 }
