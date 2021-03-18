@@ -306,15 +306,17 @@ d)	Удалить файл.*/
       int choise;
       string s;
       choise = -1;
-      s = Console.ReadLine();
       while ((choise > 5) || (choise < 0))
       {
+        s = Console.ReadLine();
         while (!(Int32.TryParse(s, out choise)))
         {
-          Console.WriteLine("Вы ввели не цифру или несуществующий пункт. Попробуйте еще раз:");
+          Console.WriteLine("Вы ввели не цифру. Попробуйте еще раз:");
           s = Console.ReadLine();
         }
         choise=Int32.Parse(s);
+        if ((choise > 5) || (choise < 0))
+          Console.WriteLine("Вы ввелинесуществующий пункт. Попробуйте еще раз:");
       }
       return choise;
     }
