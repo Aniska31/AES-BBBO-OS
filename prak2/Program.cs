@@ -1,6 +1,8 @@
 ﻿using System;
 using System.IO;
 using System.Threading.Tasks;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace prak2
 {
@@ -82,11 +84,41 @@ namespace prak2
         }
       }
     }
+
+    private static string GetHash(HashAlgorithm hashAlgorithm, string input)
+    {
+      byte[] data = hashAlgorithm.ComputeHash(System.Text.Encoding.ASCII.GetBytes(input));
+      var sBuilder = new StringBuilder();
+      for (int i = 0; i < data.Length; i++)
+      {
+        sBuilder.Append(data[i].ToString("x2"));
+      }
+      return sBuilder.ToString();
+    }
     static async Task Main(string[] args)
     {
-      /*string[] SHA = SHA_read();
-      for (int i = 0; i < 3; i++)
-        Console.WriteLine(SHA[i]);*/
+      string[] SHA_hash = SHA_read();
+      SHA256 SHA = SHA256.Create();
+      string hash;
+      string password;
+      char[] symbols = new char[5];
+      for (int i = 97; i <= 122; i++) //97 a, 122 z
+        for (int j = 97; j <= 122; j++)
+          for (int k = 97; k <= 122; k++)
+            for (int l = 97; l <= 122; l++)
+              for (int m = 97; m <= 122; m++)
+              {
+                symbols[0] = Convert.ToChar(i);
+                symbols[1] = Convert.ToChar(j);
+                symbols[2] = Convert.ToChar(k);
+                symbols[3] = Convert.ToChar(l);
+                symbols[4] = Convert.ToChar(m);
+                password = new string(symbols);
+                hash = GetHash(SHA, password);
+                for (int h = 0; h < 3; h++)
+                  if (SHA_hash[h] == hash)
+                    Console.WriteLine(password);
+              }
     }
   }
 }
