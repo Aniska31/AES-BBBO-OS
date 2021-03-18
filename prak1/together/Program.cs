@@ -316,7 +316,7 @@ d)	Удалить файл.*/
         }
         choise=Int32.Parse(s);
         if ((choise > 5) || (choise < 0))
-          Console.WriteLine("Вы ввелинесуществующий пункт. Попробуйте еще раз:");
+          Console.WriteLine("Вы ввели несуществующий пункт. Попробуйте еще раз:");
       }
       return choise;
     }
