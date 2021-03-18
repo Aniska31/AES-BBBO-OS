@@ -17,15 +17,17 @@ namespace prak2
       int choise;
       string s;
       choise = -1;
-      s = Console.ReadLine();
-      while ((choise < 1) || (choise >2))
+      while ((choise > 2) || (choise < 1))
       {
+        s = Console.ReadLine();
         while (!(Int32.TryParse(s, out choise)))
         {
-          Console.WriteLine("Вы ввели не цифру или несуществующий пункт. Попробуйте еще раз:");
+          Console.WriteLine("Вы ввели не цифру. Попробуйте еще раз:");
           s = Console.ReadLine();
         }
         choise = Int32.Parse(s);
+        if ((choise > 2) || (choise < 1))
+          Console.WriteLine("Вы ввели несуществующий пункт. Попробуйте еще раз:");
       }
 
       string name = "SHA.txt";
