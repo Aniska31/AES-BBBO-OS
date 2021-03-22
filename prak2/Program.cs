@@ -4,12 +4,14 @@ using System.Threading;
 using System.Security.Cryptography;
 using System.Text;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace prak2
 {
   class Program
   {
     static string[] passwords_all = { "", "", "" };
+    static int count = 0;
     static int Menu()
     {
       Console.WriteLine
@@ -41,48 +43,48 @@ namespace prak2
       switch (Menu())
       {
         case 1:
-        {
+          {
             string[] SHA = { "", "", "" };
             for (int i = 0; i < 3; i++)
             {
-              Console.WriteLine($"Введите SHA {i+1}:");
+              Console.WriteLine($"Введите SHA {i + 1}:");
               SHA[i] = Console.ReadLine();
             }
             return SHA;
-        }
+          }
         case 2:
-        { 
-          string name = "SHA.txt";
-          if (!(File.Exists(name)))
           {
-            FileStream fstream = new FileStream(name, FileMode.Create);
-            string[] SHA_file = {
+            string name = "SHA.txt";
+            if (!(File.Exists(name)))
+            {
+              FileStream fstream = new FileStream(name, FileMode.Create);
+              string[] SHA_file = {
               "1115dd800feaacefdf481f1f9070374a2a81e27880f187396db67958b207cbad", Environment.NewLine,
               "3a7bd3e2360a3d29eea436fcfb7e44c735d117c42d1c1835420b6b9942dd4f1b", Environment.NewLine,
               "74e1bb62f8dabb8125a58852b63bdf6eaef667cb56ac7f7cdba6d7305c50a22f" };
-            foreach (string text in SHA_file)
-            {
-              byte[] array_file = System.Text.Encoding.Default.GetBytes(text);
-              fstream.Write(array_file, 0, array_file.Length);
+              foreach (string text in SHA_file)
+              {
+                byte[] array_file = System.Text.Encoding.Default.GetBytes(text);
+                fstream.Write(array_file, 0, array_file.Length);
+              }
+              fstream.Close();
             }
-            fstream.Close();
+            FileStream fs = new FileStream(name, FileMode.Open);
+            string[] SHA = { "", "", "" };
+            string copy;
+            byte[] array = new byte[66 * 3];// 64 - sha, 1 \n
+            fs.Read(array, 0, array.Length);
+            copy = System.Text.Encoding.Default.GetString(array);
+            for (int i = 0; i < 3; i++)
+              SHA[i] = copy.Substring(66 * i, 64);
+            return SHA;
           }
-          FileStream fs = new FileStream(name, FileMode.Open);
-          string[] SHA = { "", "", "" };
-          string copy;
-          byte[] array = new byte[66 * 3];// 64 - sha, 1 \n
-          fs.Read(array, 0, array.Length);
-          copy = System.Text.Encoding.Default.GetString(array);
-          for (int i = 0; i < 3; i++)
-            SHA[i] = copy.Substring(66 * i, 64);
-          return SHA;
-        }
         default:
-        {
+          {
             string[] SHA = { "error" };
             Console.WriteLine("Ошибка.");
             return SHA;
-        }
+          }
       }
     }
 
@@ -98,44 +100,33 @@ namespace prak2
     }
 
     public static void GetPassword(object obj)
-     {
+    {
+      Stopwatch timer = new Stopwatch();
+      timer.Start();
       Count c = (Count)obj;
       string[] SHA_all = c.SHA_all;
       SHA256 SHA = SHA256.Create();
       string hash;
       string password;
       char[] symbols = new char[5];
-      //for (int i = 97; (i <= 122); i++) //97 a, 122 z
-      for (int i = 97+c.number*c.tries; (i <= 122)&&(i< 97 + c.number*c.tries+c.tries); i++)
-        for (int j = 97; (j <= 122); j++)
+      for (int i = 0; i < c.tries; i++)
+        for (int j = 97; (j <= 122); j++) //97 a, 122 z
           for (int k = 97; (k <= 122); k++)
             for (int l = 97; (l <= 122); l++)
               for (int m = 97; (m <= 122); m++)
               {
-                symbols[0] = Convert.ToChar(i);
+                symbols[0] = Convert.ToChar(97 + c.number + i *count);
                 symbols[1] = Convert.ToChar(j);
                 symbols[2] = Convert.ToChar(k);
                 symbols[3] = Convert.ToChar(l);
                 symbols[4] = Convert.ToChar(m);
                 password = new string(symbols);
                 hash = GetHash(SHA, password);
-                Console.WriteLine(password);//
                 for (int h = 0; h < 3; h++)
                   if (SHA_all[h] == hash)
-                    //Console.WriteLine(password);
-                    passwords_all[h] = password;
+                    Console.WriteLine($"{password} и время выполнения в милисекундах в потоке №{c.number} : {timer.ElapsedMilliseconds}");
                 Thread.Sleep(0);
               }
-     }
-
-    public static void WritePassword()
-    {
-      Console.ReadKey();
-      Console.WriteLine("Полученные пароли:");
-      for (int f = 0; f < 3; f++)
-        Console.WriteLine(passwords_all[f]);
-      Console.WriteLine("Вот и все!");
-      Console.ReadKey();
     }
 
     public class Count
@@ -152,10 +143,9 @@ namespace prak2
       List<Count> c_th = new List<Count>();
       string[] SHA_all;
       SHA_all = SHA_read();
-      int count;
-      Console.WriteLine("Введите количество потоков(до 26):");
+      Console.WriteLine("Введите количество потоков(от 13 до 26):");
       count = Int32.Parse(Console.ReadLine());
-      if (count >= 13)
+      /*if (count >= 13)
       {
         for (int a = 0; a < count; a++)
         {
@@ -169,15 +159,26 @@ namespace prak2
             c_th[a].tries = 1;
           threads[a].Start(c_th[a]);
         }
-        /*for (int a = 0; a < 26 - count; a++)
+      }*/
+      if ((count >= 1) && (count <= 26))
+      {
+        int count_div = 26 / count;
+        int count_mod = 26 % count;
+        for (int a = 0; a < count; a++)
+        {
+          threads.Add(new Thread(new ParameterizedThreadStart(GetPassword)));
+          c_th.Add(new Count());
+          c_th[a].SHA_all = SHA_all;
+          c_th[a].number = a;
+          c_th[a].tries = count_div;
+          if (count_mod >= 1)
+          {
+            c_th[a].tries++;
+            count_mod--;
+          }
           threads[a].Start(c_th[a]);
-        for(int a=26-count; a<count ;a++)
-          threads[a].Start(c_th[a]);*/
+        }
       }
-      /*Thread th = new Thread(new ThreadStart(WritePassword));
-      th.Priority = 0;
-      th.Start();*/
-      WritePassword();
     }
   }
 }
