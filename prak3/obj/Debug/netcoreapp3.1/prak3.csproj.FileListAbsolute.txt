@@ -1,0 +1,13 @@
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak3\bin\Debug\netcoreapp3.1\prak3.exe
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak3\bin\Debug\netcoreapp3.1\prak3.deps.json
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak3\bin\Debug\netcoreapp3.1\prak3.runtimeconfig.json
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak3\bin\Debug\netcoreapp3.1\prak3.runtimeconfig.dev.json
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak3\bin\Debug\netcoreapp3.1\prak3.dll
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak3\bin\Debug\netcoreapp3.1\prak3.pdb
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak3\obj\Debug\netcoreapp3.1\prak3.csprojAssemblyReference.cache
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak3\obj\Debug\netcoreapp3.1\prak3.AssemblyInfoInputs.cache
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak3\obj\Debug\netcoreapp3.1\prak3.AssemblyInfo.cs
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak3\obj\Debug\netcoreapp3.1\prak3.csproj.CoreCompileInputs.cache
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak3\obj\Debug\netcoreapp3.1\prak3.dll
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak3\obj\Debug\netcoreapp3.1\prak3.pdb
+C:\Users\Yaga\Documents\AES-BBBO-OS\prak3\obj\Debug\netcoreapp3.1\prak3.genruntimeconfig.cache
