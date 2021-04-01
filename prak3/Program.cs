@@ -23,49 +23,36 @@ namespace prak3
       bool acquiredLock;
       Random rnd = new Random();
       while (check)
+      {
         if (goods.Count >= 100)
         {
           Console.WriteLine($"Продавец {number} спит.");
           sleeping = true;
           Thread.Sleep(1200);
+          continue;
         }
         else
-          if ((goods.Count <= 80)&&(sleeping))
+          if ((goods.Count <= 80) && (sleeping))
           {
             Console.WriteLine($"Продавец {number} проснулся.");
             sleeping = false;
-            acquiredLock = false;
-            value = rnd.Next(1, 100);
-            try
-            {
-              Monitor.Enter(Slocker, ref acquiredLock);
-              goods.Add(value);
-              control.Add(value);
-            }
-            finally
-            {
-              if (acquiredLock) Monitor.Exit(Slocker);
-            }
-            //S.WriteLine(value);
-            //Console.WriteLine($"Продавец {number} произвел число {value}");
           }
-          else
-          {
-            value = rnd.Next(1, 100);
-            acquiredLock = false;
-            try
-            {
-              Monitor.Enter(Slocker, ref acquiredLock);
-              goods.Add(value);
-              control.Add(value);
-            }
-            finally
-            {
-              if (acquiredLock) Monitor.Exit(Slocker);
-            }
-            // S.WriteLine(value);
-            // Console.WriteLine($"Продавец {number} произвел число {value}");
+        value = rnd.Next(1, 100);
+        acquiredLock = false;
+        try
+        {
+          Monitor.Enter(Slocker, ref acquiredLock);
+          goods.Add(value);
+          control.Add(value);
+          Thread.Sleep(0);
         }
+        finally
+        {
+          if (acquiredLock) Monitor.Exit(Slocker);
+        }
+        // S.WriteLine(value);
+        Console.WriteLine($"Продавец {number} произвел число {value}");
+      }
       Console.WriteLine($"Продавец {number} ушел на покой.");
     }
     static void Buyer(object j)
@@ -75,59 +62,44 @@ namespace prak3
       bool sleeping = false;
       bool acquiredLock;
       while ((goods.Count != 0) || (check))
+      { 
         if (goods.Count == 0)
         {
           Console.WriteLine($"Покупатель {number} спит.");
           sleeping = true;
           Thread.Sleep(500);
+          continue;
         }
         else
           if (sleeping)
           {
             Console.WriteLine($"Покупатель {number} проснулся.");
             sleeping = false;
-            acquiredLock = false;
-            try
-            {
-              Monitor.Enter(Blocker, ref acquiredLock);
-              if (goods.Count != 0)//пустой ли список, вдруг другой покупатель забрал элемент, а проверка на ноль уже прошлась.
-              {
-                  value = goods[0];
-                  goods.RemoveAt(0);
-              }
-              else
-                continue;
-            }
-            finally
-            {
-              if (acquiredLock) Monitor.Exit(Blocker);
-            }
-            uses.Add(value);
-            //B.WriteLine(value);
-            //Console.WriteLine($"Покупатель {number} извлек число {value}");
+          }
+        acquiredLock = false;
+        try
+        {
+          Monitor.Enter(Blocker, ref acquiredLock);
+          if (goods.Count != 0)//пустой ли список, вдруг другой покупатель забрал элемент, а проверка на ноль уже прошлась.
+          {
+            value = goods[0];
+            goods.RemoveAt(0);
+            Thread.Sleep(0);
           }
           else
           {
-            acquiredLock = false;
-            try
-            {
-              Monitor.Enter(Blocker, ref acquiredLock);
-              if (goods.Count != 0)//пустой ли список, вдруг другой покупатель забрал элемент, а проверка на ноль уже прошлась.
-              {
-                value = goods[0];
-                goods.RemoveAt(0);
-              }
-              else
-                continue;
-            }
-            finally
-            {
-              if (acquiredLock) Monitor.Exit(Blocker);
-            }
-            uses.Add(value);
-            //B.WriteLine(value);
-            //Console.WriteLine($"Покупатель {number} извлек число {value}");
+            Thread.Sleep(0);
+            continue;
+          }
         }
+        finally
+        {
+          if (acquiredLock) Monitor.Exit(Blocker);
+        }
+        uses.Add(value);
+        //B.WriteLine(value);
+        Console.WriteLine($"Покупатель {number} извлек число {value}");
+    }
       Console.WriteLine($"Покупатель {number} ушел на отдых.");
     }
     static void Main()
