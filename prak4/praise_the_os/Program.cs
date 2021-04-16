@@ -11,8 +11,12 @@ namespace praise_the_os
     static List<Thread> func = new List<Thread>();
     static int kvant = 7000;
     static bool zero,first,second;//проверка спят ли потоки
+    private static ManualResetEvent mre_zero= new ManualResetEvent(false);
+    private static ManualResetEvent mre_first = new ManualResetEvent(false);
+    private static ManualResetEvent mre_second = new ManualResetEvent(false);
     static void WordCount()//просто переборка слова из 7 слов
     {// работало около 30секунд, sum=578207808
+      mre_zero.WaitOne();
       uint sum = 0;
       string text;
       char[] symbols = new char[7];
@@ -38,7 +42,8 @@ namespace praise_the_os
     }
     static void NumberCount()//просто переборка чисел из 9 цифр
     {//работает около 60сек, sum=900kk
-      Thread.Sleep(Timeout.Infinite);
+      mre_first.WaitOne();
+      //Thread.Sleep(Timeout.Infinite);
       uint sum = 0;
       string text;
       char[] symbols = new char[9];
@@ -68,7 +73,8 @@ namespace praise_the_os
     }
     static void Fibonacci()
     {//время около 40сек, a=14553936698768595515
-      Thread.Sleep(Timeout.Infinite);
+      mre_second.WaitOne();
+      //Thread.Sleep(Timeout.Infinite);
       ulong a = 0;//первый и последний член
       ulong b = 1;//второй и последующий член
       ulong tmp;//хранилище
@@ -90,7 +96,6 @@ namespace praise_the_os
         factorial *= i;
       Console.WriteLine(factorial);
     }*/
-    [Obsolete]
     static void Main()
     {
       /*Stopwatch timer = new Stopwatch();
@@ -105,6 +110,8 @@ namespace praise_the_os
       func.Add(new Thread(Fibonacci)); func[2].Name = "Fibonacci";
       for(int i=0;i<3;i++)
         func[i].Start();
+      mre_first.Reset();
+      mre_second.Reset();
       zero = false; first = true; second = true;
       Stopwatch timer = new Stopwatch();
       timer.Start();
@@ -114,8 +121,10 @@ namespace praise_the_os
           if(!zero)
           {
             zero = true;
-            func[0].Suspend();
-            func[1].Interrupt();
+            mre_zero.Reset();
+            //func[0].Suspend();
+            //func[1].Interrupt();
+            mre_first.Set();
             first = false;
             timer.Restart();
           }
@@ -123,16 +132,20 @@ namespace praise_the_os
             if(!first)
             {
               first = true;
-              func[1].Suspend();
-              func[2].Interrupt();
+              mre_first.Reset();
+              //func[1].Suspend();
+              //func[2].Interrupt();
+              mre_second.Set();
               second = false;
               timer.Restart();
             }
             else
             {
               second = true;
-              func[2].Suspend();
-              func[0].Interrupt();
+              mre_second.Reset();
+              //func[2].Suspend();
+              //func[0].Interrupt();
+              mre_zero.Set();
               zero = false;
               timer.Restart();
             }
