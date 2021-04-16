@@ -1,11 +1,16 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Diagnostics;
 using System.Numerics;
+using System.Threading;
 
 namespace praise_the_os
 {
   class Program
   {
+    static List<Thread> func = new List<Thread>();
+    static int kvant = 7000;
+    static bool zero,first,second;//проверка спят ли потоки
     static void WordCount()//просто переборка слова из 7 слов
     {// работало около 30секунд, sum=578207808
       uint sum = 0;
@@ -33,6 +38,7 @@ namespace praise_the_os
     }
     static void NumberCount()//просто переборка чисел из 9 цифр
     {//работает около 60сек, sum=900kk
+      Thread.Sleep(Timeout.Infinite);
       uint sum = 0;
       string text;
       char[] symbols = new char[9];
@@ -60,18 +66,9 @@ namespace praise_the_os
                         }
       Console.WriteLine(sum);
     }
-
-    /*static void Factorial()//слишком быстро,меньше секунды работает
-    {
-      int n = 5;
-      var factorial = new BigInteger(1);
-      for (int i = 1; i <= n; i++)
-        factorial *= i;
-      Console.WriteLine(factorial);
-    }*/
-
     static void Fibonacci()
     {//время около 40сек, a=14553936698768595515
+      Thread.Sleep(Timeout.Infinite);
       ulong a = 0;//первый и последний член
       ulong b = 1;//второй и последующий член
       ulong tmp;//хранилище
@@ -84,15 +81,62 @@ namespace praise_the_os
       }
       Console.WriteLine(a);
     }
+
+    /*static void Factorial()//слишком быстро,меньше секунды работает
+    {
+      int n = 5;
+      var factorial = new BigInteger(1);
+      for (int i = 1; i <= n; i++)
+        factorial *= i;
+      Console.WriteLine(factorial);
+    }*/
+    [Obsolete]
     static void Main()
     {
-      Stopwatch timer = new Stopwatch();
+      /*Stopwatch timer = new Stopwatch();
       timer.Start();
-      //WordCount();
+      WordCount();
       //NumberCount();
       //Fibonacci();
-      //Factorial();
-      Console.WriteLine($"время:{timer.ElapsedMilliseconds}");
+      Factorial();
+      Console.WriteLine($"время:{timer.ElapsedMilliseconds}");*/
+      func.Add(new Thread(WordCount)); func[0].Name = "WordCount";
+      func.Add(new Thread(NumberCount)); func[1].Name = "NumberCount";
+      func.Add(new Thread(Fibonacci)); func[2].Name = "Fibonacci";
+      for(int i=0;i<3;i++)
+        func[i].Start();
+      zero = false; first = true; second = true;
+      Stopwatch timer = new Stopwatch();
+      timer.Start();
+      while (func[0].IsAlive|| func[1].IsAlive|| func[2].IsAlive)
+      {
+        if(timer.ElapsedMilliseconds>kvant)//секундомер на 7 секунд
+          if(!zero)
+          {
+            zero = true;
+            func[0].Suspend();
+            func[1].Interrupt();
+            first = false;
+            timer.Restart();
+          }
+          else
+            if(!first)
+            {
+              first = true;
+              func[1].Suspend();
+              func[2].Interrupt();
+              second = false;
+              timer.Restart();
+            }
+            else
+            {
+              second = true;
+              func[2].Suspend();
+              func[0].Interrupt();
+              zero = false;
+              timer.Restart();
+            }
+      }
     }
   }
 }
