@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Home_PC\\Downloads\\abc\\Praktika_4_OS\\Praktika_4_OS.csproj",
+      "projectUniqueName": "C:\\Users\\Home_PC\\Pictures\\AES-BBBO-OS\\Praktika_4_OS\\Praktika_4_OS.csproj",
       "projectName": "Praktika_4_OS",
-      "projectPath": "C:\\Users\\Home_PC\\Downloads\\abc\\Praktika_4_OS\\Praktika_4_OS.csproj",
+      "projectPath": "C:\\Users\\Home_PC\\Pictures\\AES-BBBO-OS\\Praktika_4_OS\\Praktika_4_OS.csproj",
       "packagesPath": "C:\\Users\\Home_PC\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Home_PC\\Downloads\\abc\\Praktika_4_OS\\obj\\",
+      "outputPath": "C:\\Users\\Home_PC\\Pictures\\AES-BBBO-OS\\Praktika_4_OS\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\Home_PC\\AppData\\Roaming\\NuGet\\NuGet.Config",
