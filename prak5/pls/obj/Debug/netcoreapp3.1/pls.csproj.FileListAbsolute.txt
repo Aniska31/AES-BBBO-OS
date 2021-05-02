@@ -1,0 +1,13 @@
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\prak5\pls\bin\Debug\netcoreapp3.1\pls.exe
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\prak5\pls\bin\Debug\netcoreapp3.1\pls.deps.json
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\prak5\pls\bin\Debug\netcoreapp3.1\pls.runtimeconfig.json
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\prak5\pls\bin\Debug\netcoreapp3.1\pls.runtimeconfig.dev.json
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\prak5\pls\bin\Debug\netcoreapp3.1\pls.dll
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\prak5\pls\bin\Debug\netcoreapp3.1\pls.pdb
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\prak5\pls\obj\Debug\netcoreapp3.1\pls.csprojAssemblyReference.cache
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\prak5\pls\obj\Debug\netcoreapp3.1\pls.AssemblyInfoInputs.cache
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\prak5\pls\obj\Debug\netcoreapp3.1\pls.AssemblyInfo.cs
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\prak5\pls\obj\Debug\netcoreapp3.1\pls.csproj.CoreCompileInputs.cache
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\prak5\pls\obj\Debug\netcoreapp3.1\pls.dll
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\prak5\pls\obj\Debug\netcoreapp3.1\pls.pdb
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\prak5\pls\obj\Debug\netcoreapp3.1\pls.genruntimeconfig.cache
