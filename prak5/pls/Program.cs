@@ -16,7 +16,7 @@ namespace pls
     {
       Console.WriteLine
         (
-        "1. Добавить задачу\n" +
+        "\n1. Добавить задачу\n" +
         "2. Удалить задачу\n" +
         "3. Посмотреть количество свободной памяти\n" +
         "0. Выход\n\n" +
@@ -97,7 +97,7 @@ namespace pls
           process = 0;
           break;
         }
-      Console.WriteLine("Полученный результат:");
+      Console.WriteLine("\nПолученный результат:");
       BeautiWrite();
     }
     static void Deletetask()
@@ -126,22 +126,13 @@ namespace pls
       for (int i = 0; i < works_replica.Count; i++)
         works.Add(new Tuple<Int32, Int32>(works_replica[i].Item1, works_replica[i].Item2));
       for (int i = count - 1; i >= pos; i--)//изменяем ячейки памяти
-      {
-        if (massive[i] == value)//итак пустая
-          continue;
-        if (pro > massive[i])//встретилась заполненная ячейка
-        {
-          pro = pro - massive[i];
-          massive[i] = value;
-        }
-        if (pro <= massive[i])//та ячейка, в которой хранится первоначальный байт
-        {
-          massive[i] = massive[i] + pro;
-          pro = 0;
-        }
-        Console.WriteLine("Полученный результат:");
-        BeautiWrite();
-      }
+          while ((massive[i] != value)&&(pro>0))
+          {
+            massive[i]++;
+            pro--;
+          }
+      Console.WriteLine("\nПолученный результат:");
+      BeautiWrite();
     }
     static void Main()
     {
