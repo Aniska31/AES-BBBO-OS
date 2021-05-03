@@ -108,7 +108,7 @@ namespace praktika4
     static void ControlThread_zero()
     {
       char for_check;
-      while (func[0].IsAlive || func[1].IsAlive || func[2].IsAlive)//окончание работы при помощи нажатия q
+      while (func[0].IsAlive || func[1].IsAlive || func[2].IsAlive)//окончание работы
       {
         for_check = Console.ReadKey().KeyChar;
         if (for_check == 'p')//оставовить или восстановить поток
@@ -140,7 +140,8 @@ namespace praktika4
       func.Add(new Thread(WordCount)); func[0].Name = "WordCount";
       func.Add(new Thread(NumberCount)); func[1].Name = "NumberCount";
       func.Add(new Thread(Fibonacci)); func[2].Name = "Fibonacci";
-      for (int i = 0; i < 3; i++)
+      func.Add(new Thread(ControlThread_zero));
+      for (int i = 0; i < 4; i++)
         func[i].Start();
       zero = false; first = true;
       timer_0.Start();

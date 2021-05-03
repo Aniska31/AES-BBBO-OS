@@ -1,0 +1,13 @@
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\Praktika_4_OS\bin\Debug\netcoreapp3.1\Praktika_4_OS.exe
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\Praktika_4_OS\bin\Debug\netcoreapp3.1\Praktika_4_OS.deps.json
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\Praktika_4_OS\bin\Debug\netcoreapp3.1\Praktika_4_OS.runtimeconfig.json
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\Praktika_4_OS\bin\Debug\netcoreapp3.1\Praktika_4_OS.runtimeconfig.dev.json
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\Praktika_4_OS\bin\Debug\netcoreapp3.1\Praktika_4_OS.dll
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\Praktika_4_OS\bin\Debug\netcoreapp3.1\Praktika_4_OS.pdb
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\Praktika_4_OS\obj\Debug\netcoreapp3.1\Praktika_4_OS.csprojAssemblyReference.cache
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\Praktika_4_OS\obj\Debug\netcoreapp3.1\Praktika_4_OS.AssemblyInfoInputs.cache
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\Praktika_4_OS\obj\Debug\netcoreapp3.1\Praktika_4_OS.AssemblyInfo.cs
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\Praktika_4_OS\obj\Debug\netcoreapp3.1\Praktika_4_OS.csproj.CoreCompileInputs.cache
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\Praktika_4_OS\obj\Debug\netcoreapp3.1\Praktika_4_OS.dll
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\Praktika_4_OS\obj\Debug\netcoreapp3.1\Praktika_4_OS.pdb
+C:\Users\Home_PC\Pictures\AES-BBBO-OS\Praktika_4_OS\obj\Debug\netcoreapp3.1\Praktika_4_OS.genruntimeconfig.cache

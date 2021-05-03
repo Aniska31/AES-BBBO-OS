@@ -1,0 +1,23 @@
+{
+  "runtimeTarget": {
+    "name": ".NETCoreApp,Version=v3.1",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETCoreApp,Version=v3.1": {
+      "Praktika_4_OS/1.0.0": {
+        "runtime": {
+          "Praktika_4_OS.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Praktika_4_OS/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}
